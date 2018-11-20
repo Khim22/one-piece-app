@@ -3,12 +3,12 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-flip infinite 10s linear;
   height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #14161a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,11 +22,24 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes App-logo-flip {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
+}
+
+.button{
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: rgb(213, 217, 241);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgb(15, 1, 1);
+  font-weight: bold;
+  text-decoration: none !important;
 }
