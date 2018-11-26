@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
+import { Button } from 'grommet/components/Button'
+import Plx from 'react-plx';
+
 import logo from './image.png';
 import './App.css';
+import TitleBar from './components/titlebar';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.mref = React.createRef();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Plx className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             <code>One Piece App</code>
           </p>
-          <a href="#one-piece" className="button">One Piece</a>       
-        </header>
-      <TitleBar/>
+          <Button
+          label="One Piece"
+          onClick={this.focus} />
+        </Plx>
+        <TitleBar refprop={this.mref} />
       </div>
     );
   }
-}
 
-class TitleBar extends Component{
-  render(){
-    return (
-      <h1 id="one-piece">One Piece</h1>
-    );
+  focus = () => {
+    window.scrollTo({
+      top: this.mref.current.offsetTop,
+      behavior: "smooth"
+    })
   }
 }
+
 
 export default App;

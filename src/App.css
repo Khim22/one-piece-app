@@ -43,3 +43,7 @@
   font-weight: bold;
   text-decoration: none !important;
 }
+
+.card{
+  max-width: 30%;
+}
